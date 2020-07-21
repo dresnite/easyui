@@ -25,6 +25,7 @@ abstract class Form implements PmForm {
 
     public function __construct(string $title) {
         $this->title = $title;
+        $this->onCreation();
     }
 
     public function getTitle(): string {
@@ -44,5 +45,7 @@ abstract class Form implements PmForm {
         $body["title"] = $this->title;
         return $body;
     }
+
+    protected function onCreation(): void {}
 
 }
