@@ -13,6 +13,7 @@ namespace EasyForms\utils;
 
 
 use Closure;
+use pocketmine\Player;
 use pocketmine\utils\Utils;
 
 trait CloseListener {
@@ -26,14 +27,14 @@ trait CloseListener {
 
     public function setCloseListener(?Closure $listener): void {
         if($this->closeListener !== null) {
-            Utils::validateCallableSignature(function(self $button) {}, $this->closeListener);
+            Utils::validateCallableSignature(function(Player $player) {}, $this->closeListener);
         }
         $this->closeListener = $listener;
     }
 
-    public function executeCloseListener(): void {
+    public function executeCloseListener(Player $player): void {
         if($this->closeListener !== null) {
-            ($this->closeListener)($this);
+            ($this->closeListener)($player);
         }
     }
 

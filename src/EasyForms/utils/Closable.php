@@ -12,11 +12,16 @@ declare(strict_types=1);
 namespace EasyForms\utils;
 
 
+use pocketmine\Player;
+
 trait Closable {
     use CloseListener;
 
-    public function onClose(): void {
-        $this->executeCloseListener();
+    public function notifyClose(Player $player): void {
+        $this->executeCloseListener($player);
+        $this->onClose($player);
     }
+
+    protected function onClose(Player $player): void {}
 
 }

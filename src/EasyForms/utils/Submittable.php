@@ -12,11 +12,16 @@ declare(strict_types=1);
 namespace EasyForms\utils;
 
 
+use pocketmine\Player;
+
 trait Submittable {
     use SubmitListener;
 
-    public function onSubmit(): void {
-        $this->executeSubmitListener();
+    public function notifySubmit(Player $player): void {
+        $this->executeSubmitListener($player);
+        $this->onSubmit($player);
     }
+
+    protected function onSubmit(Player $player): void {}
 
 }

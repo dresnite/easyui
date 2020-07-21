@@ -57,11 +57,11 @@ class SimpleForm extends Form {
 
     public function handleResponse(Player $player, $data): void {
         if($data === null) {
-            $this->onClose();
+            $this->notifyClose($player);
         } elseif(!is_int($data) or !isset($this->buttons[$data])) {
             throw new FormValidationException( "Couldn't find the option $data");
         } else {
-            $this->buttons[$data]->onSubmit();
+            $this->buttons[$data]->notifySubmit($player);
         }
     }
 

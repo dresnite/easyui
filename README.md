@@ -6,15 +6,15 @@ EasyForms is a clean and easy-to-use form library for PocketMine-MP. Designed to
 
 ### General rules
 
-All the closures passed to EasyForm classes must use its parent class as first and only argument.
+All the closures passed to EasyForm classes must declare a variable of the class Player as first and only argument.
 
 ### SimpleForm
 
 Creating a form with a button without an icon:
 ```php
 $form = new SimpleForm("This is the title");
-$form->addButton(new Button("Say hi", null, function(Button $button) {
-    $button->getPlayer()->sendMessage("Hello!");
+$form->addButton(new Button("Say hi", null, function(Player $player) {
+    $player->sendMessage("Hello!");
 }));
 $player->sendForm($form);
 ```
@@ -22,8 +22,8 @@ $player->sendForm($form);
 Creating a form with a button with an icon:
 ```php
 $form = new SimpleForm("This is the title");
-$form->addButton(new Button("Press me!", new ButtonIcon("https://introduce-the-image-url.here"), function(Button $button) {
-    $button->getPlayer()->sendMessage("Hey! Thanks for pressing me :)");
+$form->addButton(new Button("Press me!", new ButtonIcon("https://introduce-the-image-url.here"), function(Player $player) {
+    $player->sendMessage("Hey! Thanks for pressing me :)");
 }));
 $player->sendForm($form);
 ```
@@ -54,8 +54,8 @@ class ExampleForm extends SimpleForm {
     protected function onCreation(): void {
         $button = new Button("A very very big button");
         $button->setIcon(new ButtonIcon("https://a-cool-url.i.think"));
-        $button->setSubmitListener(function(Button $button) {
-            $button->getPlayer()->sendMessage("Making this form was so easy!");
+        $button->setSubmitListener(function(Player $player) {
+            $player->sendMessage("Making this form was so easy!");
         });
         $this->addButton($button);
     }
