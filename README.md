@@ -52,9 +52,12 @@ class ExampleForm extends SimpleForm {
     }
 
     protected function onCreation(): void {
-        $this->addButton(new Button("Press me!", null, function(Button $button) {
-            $button->getPlayer()->sendMessage("You pressed me!");
-        }));
+        $button = new Button("A very very big button");
+        $button->setIcon(new ButtonIcon("https://a-cool-url.i.think"));
+        $button->setSubmitListener(function(Button $button) {
+            $button->getPlayer()->sendMessage("Making this form was so easy!");
+        });
+        $this->addButton($button);
     }
 
 }
