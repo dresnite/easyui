@@ -43,6 +43,7 @@ abstract class Form implements PmForm {
     public function jsonSerialize(): array {
         $body = $this->serializeBody();
         $body["title"] = $this->title;
+        $body["type"] = $this->getType();
         return $body;
     }
 
