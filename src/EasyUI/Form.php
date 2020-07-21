@@ -21,7 +21,7 @@ abstract class Form implements PmForm {
 
     public const TYPE_SIMPLE_FORM = "form";
     public const TYPE_CUSTOM_FORM = "custom_form";
-    public const TYPE_MODAL_FORM = "modal_form";
+    public const TYPE_MODAL_FORM = "modal";
 
     public function __construct(string $title) {
         $this->title = $title;
