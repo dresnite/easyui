@@ -1,6 +1,6 @@
-# EasyForms
+# EasyUI
 
-EasyForms is a clean and easy-to-use form library for PocketMine-MP. Designed to let you focus on your project and not on how the library works.
+EasyUI is a clean and easy-to-use form library for PocketMine-MP. Designed to let you focus on your project and not on how the library works.
 
 ## Code examples
 
