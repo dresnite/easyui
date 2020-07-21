@@ -1,6 +1,6 @@
 # EasyForms
 
-EasyForms is an extremely easy-to-use form library for PocketMine-MP. Designed to let you focus on your project and not on how the library works.
+EasyForms is an easy-to-use form library for PocketMine-MP. Designed to let you focus on your project and not on how the library works.
 
 ## Code examples
 
@@ -10,7 +10,7 @@ All the closures passed to EasyForm classes must use its parent class as first a
 
 ### SimpleForm
 
-Creating a form with a button without an image:
+Creating a form with a button without an icon:
 ```php
 $form = new SimpleForm("This is the title");
 $form->addButton(new Button("Say hi", null, function(Button $button) {
@@ -19,7 +19,7 @@ $form->addButton(new Button("Say hi", null, function(Button $button) {
 $player->sendForm($form);
 ```
 
-Creating a form with a button with an image:
+Creating a form with a button with an icon:
 ```php
 $form = new SimpleForm("This is the title");
 $form->addButton(new Button("Press me!", new ButtonIcon("https://introduce-the-image-url.here"), function(Button $button) {
