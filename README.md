@@ -51,7 +51,7 @@ class ExampleForm extends SimpleForm {
         parent::__construct("Form title");
     }
 
-    public function onCreation(): void {
+    protected function onCreation(): void {
         $this->addButton(new Button("Press me!", null, function(Button $button) {
             $button->getPlayer()->sendMessage("You pressed me!");
         }));
