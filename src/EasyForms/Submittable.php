@@ -12,13 +12,16 @@ declare(strict_types=1);
 namespace EasyForms;
 
 
-use EasyForms\type\SimpleForm;
-use pocketmine\plugin\PluginBase;
+use pocketmine\Player;
 
-class EasyForms extends PluginBase {
+trait Submittable {
+    use SubmitListener;
 
-    public function createSimpleForm(string $title, ?string $headerText = null): SimpleForm {
-        return new SimpleForm($title, $headerText);
+    public function notifySubmit(Player $player): void {
+        $this->executeSubmitListener($player);
+        $this->onSubmit($player);
     }
+
+    protected function onSubmit(Player $player): void {}
 
 }

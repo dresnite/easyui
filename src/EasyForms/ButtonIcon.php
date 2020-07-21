@@ -9,7 +9,7 @@
 declare(strict_types=1);
 
 
-namespace EasyForms\icon;
+namespace EasyForms;
 
 
 use JsonSerializable;

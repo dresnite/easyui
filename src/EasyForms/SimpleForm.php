@@ -9,12 +9,9 @@
 declare(strict_types=1);
 
 
-namespace EasyForms\type;
+namespace EasyForms;
 
 
-use EasyForms\element\Button;
-use EasyForms\Form;
-use EasyForms\utils\Closable;
 use pocketmine\form\FormValidationException;
 use pocketmine\Player;
 

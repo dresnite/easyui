@@ -9,7 +9,7 @@
 declare(strict_types=1);
 
 
-namespace EasyForms\utils;
+namespace EasyForms;
 
 
 use pocketmine\Player;

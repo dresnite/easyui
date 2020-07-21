@@ -9,12 +9,10 @@
 declare(strict_types=1);
 
 
-namespace EasyForms\element;
+namespace EasyForms;
 
 
 use Closure;
-use EasyForms\icon\ButtonIcon;
-use EasyForms\utils\Submittable;
 use JsonSerializable;
 
 class Button implements JsonSerializable {
