@@ -26,7 +26,7 @@ class Button implements JsonSerializable {
     /** @var ButtonIcon|null */
     private $icon;
 
-    public function __construct(string $text, ?ButtonIcon $icon, ?Closure $listener) {
+    public function __construct(string $text, ?ButtonIcon $icon = null, ?Closure $listener = null) {
         $this->text = $text;
         $this->icon = $icon;
         $this->setSubmitListener($listener);
