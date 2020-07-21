@@ -1,12 +1,12 @@
 # EasyUI
 
-EasyUI is a clean and easy-to-use form library for PocketMine-MP. Designed to let you focus on your project and not on how the library works.
+EasyUI is an intuitive and easy-to-use form library for PocketMine-MP. Designed to let you focus on your project and not on how the library works.
 
 ## Code examples
 
 ### General rules
 
-All the closures passed to EasyForm classes must declare a variable of the class Player as first and only argument.
+All the closures passed to EasyUI classes must declare a variable of the class Player as first and only argument.
 
 ### SimpleForm
 
