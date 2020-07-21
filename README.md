@@ -40,9 +40,32 @@ $form->setCloseListener(function(SimpleForm $form) {
 })
 ```
 
+### ModalForm
+
+Creating a modal form and handling what happens when the player presses "accept" or "deny":
+```php
+$form = new ModalForm("The title goes here!", "Do you want this plugin to save you a lot of time?");
+$form->setAcceptListener(function(Player $player) {
+    $player->sendMessage("Great! Keep building good software");
+});
+
+$form->setDenyListener(function(Player $player) {
+    $player->sendMessage("Whatever :/");
+});
+
+```
+
+You can also change the text of the buttons:
+```php
+$form->setAcceptText("Yes");
+$form->setDenyText("Yes");
+```
+
 ## Object oriented approach
 
 In some cases, the forms are huge and mess up the code. In those cases, you can use a more object oriented approach to keep the code as clean as possible.   
+
+### SimpleForm
 
 ```php
 class ExampleForm extends SimpleForm {
@@ -62,6 +85,27 @@ class ExampleForm extends SimpleForm {
 
 }
 ```
+
+### ModalForm
+
+```php
+class ExampleForm extends ModalForm {
+    
+    public function __construct() {
+        parent::__construct("The title", "The content text");
+    }
+
+    protected function onAccept(Player $player): void {
+        $player->sendMessage("You pressed 'Accept' <3");
+    }
+
+    protected function onDeny(Player $player): void {
+        $player->sendMessage("You pressed 'Deny' >:(");
+    }
+
+}
+```
+**NOTE**: `onCreation()` is also available on ModalForms.
 
 Then you can send the forms as you normally would:
 ```php
