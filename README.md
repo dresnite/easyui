@@ -58,7 +58,7 @@ $form->setDenyListener(function(Player $player) {
 You can also change the text of the buttons:
 ```php
 $form->setAcceptText("Yes");
-$form->setDenyText("Yes");
+$form->setDenyText("Yesn't");
 ```
 
 ## Object oriented approach
