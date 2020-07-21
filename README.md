@@ -1,6 +1,6 @@
 # EasyForms
 
-EasyForms is an easy-to-use form library for PocketMine-MP. Designed to let you focus on your project and not on how the library works.
+EasyForms is a clean and easy-to-use form library for PocketMine-MP. Designed to let you focus on your project and not on how the library works.
 
 ## Code examples
 
@@ -38,6 +38,31 @@ Controlling what happens when a form closes (optional):
 $form->setCloseListener(function(SimpleForm $form) {
     echo "The form was closed!";
 })
+```
+
+## Object oriented approach
+
+In some cases, the forms are huge and mess up the code. In those cases, you can use a more object oriented approach to keep the code as clean as possible.   
+
+```php
+class ExampleForm extends SimpleForm {
+
+    public function __construct() {
+        parent::__construct("Form title");
+    }
+
+    public function onCreation(): void {
+        $this->addButton(new Button("Press me!", null, function(Button $button) {
+            $button->getPlayer()->sendMessage("You pressed me!");
+        }));
+    }
+
+}
+```
+
+Then you can send the forms as you normally would:
+```php
+$player->sendForm(new ExampleForm());
 ```
 
 
