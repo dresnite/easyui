@@ -9,8 +9,10 @@
 declare(strict_types=1);
 
 
-namespace EasyUI;
+namespace EasyUI\element;
 
+
+use EasyUI\utils\Submittable;
 
 class ModalOption {
     use Submittable;

@@ -9,9 +9,12 @@
 declare(strict_types=1);
 
 
-namespace EasyUI;
+namespace EasyUI\variant;
 
 
+use EasyUI\element\Button;
+use EasyUI\Form;
+use EasyUI\utils\Closable;
 use pocketmine\form\FormValidationException;
 use pocketmine\Player;
 

@@ -9,10 +9,12 @@
 declare(strict_types=1);
 
 
-namespace EasyUI;
+namespace EasyUI\element;
 
 
 use Closure;
+use EasyUI\icon\ButtonIcon;
+use EasyUI\utils\Submittable;
 use JsonSerializable;
 
 class Button implements JsonSerializable {

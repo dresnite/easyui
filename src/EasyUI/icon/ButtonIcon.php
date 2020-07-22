@@ -9,7 +9,7 @@
 declare(strict_types=1);
 
 
-namespace EasyUI;
+namespace EasyUI\icon;
 
 
 use JsonSerializable;

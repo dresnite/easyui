@@ -9,7 +9,7 @@
 declare(strict_types=1);
 
 
-namespace EasyUI;
+namespace EasyUI\utils;
 
 
 use Closure;

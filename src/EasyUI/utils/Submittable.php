@@ -9,19 +9,19 @@
 declare(strict_types=1);
 
 
-namespace EasyUI;
+namespace EasyUI\utils;
 
 
 use pocketmine\Player;
 
-trait Closable {
-    use CloseListener;
+trait Submittable {
+    use SubmitListener;
 
-    public function notifyClose(Player $player): void {
-        $this->executeCloseListener($player);
-        $this->onClose($player);
+    public function notifySubmit(Player $player): void {
+        $this->executeSubmitListener($player);
+        $this->onSubmit($player);
     }
 
-    protected function onClose(Player $player): void {}
+    protected function onSubmit(Player $player): void {}
 
 }
