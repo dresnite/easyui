@@ -2,6 +2,8 @@
 
 EasyUI is an intuitive and easy-to-use form library for PocketMine-MP. Designed to let you focus on your project and not on how the library works.
 
+(*) This library is under development and thus might have backwards compatibility breaking changes without any prior notice.
+
 ## Code examples
 
 ### General rules
