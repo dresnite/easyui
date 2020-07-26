@@ -38,6 +38,17 @@ class CustomForm extends Form {
         return Form::TYPE_CUSTOM_FORM;
     }
 
+    /**
+     * @return Element[]
+     */
+    public function getElements(): array {
+        return $this->elements;
+    }
+
+    public function addElement(string $id, Element $element): void {
+        $this->elements[$id] = $element;
+    }
+
     public function getSubmitListener(): ?Closure {
         return $this->submitListener;
     }
