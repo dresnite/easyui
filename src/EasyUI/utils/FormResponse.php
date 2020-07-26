@@ -14,6 +14,7 @@ namespace EasyUI\utils;
 
 use EasyUI\element\Element;
 use EasyUI\element\Input;
+use EasyUI\element\Slider;
 use EasyUI\element\Toggle;
 use InvalidArgumentException;
 use ReflectionClass;
@@ -40,10 +41,14 @@ class FormResponse {
         return $this->getElement($toggleId, Toggle::class)->getSubmittedChoice();
     }
 
+    public function getSliderSubmittedStep(string $sliderId): float {
+        return $this->getElement($sliderId, Slider::class)->getSubmittedStep();
+    }
+
     /**
      * @param string $id
      * @param string $expectedClass
-     * @return Element|Input|Toggle
+     * @return Element|Input|Toggle|Slider
      */
     private function getElement(string $id, string $expectedClass): Element {
         $element = $this->elements[$id] ?? null;
