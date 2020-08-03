@@ -12,8 +12,10 @@ declare(strict_types=1);
 namespace EasyUI\utils;
 
 
+use EasyUI\element\Dropdown;
 use EasyUI\element\Element;
 use EasyUI\element\Input;
+use EasyUI\element\Selector;
 use EasyUI\element\Slider;
 use EasyUI\element\StepSlider;
 use EasyUI\element\Toggle;
@@ -50,10 +52,14 @@ class FormResponse {
         return $this->getElement($sliderId, StepSlider::class)->getSubmittedOptionId();
     }
 
+    public function getDropdownSubmittedOptionId(string $dropdownId): string {
+        return $this->getElement($dropdownId, Dropdown::class)->getSubmittedOptionId();
+    }
+
     /**
      * @param string $id
      * @param string $expectedClass
-     * @return Element|Input|Toggle|Slider|StepSlider
+     * @return Element|Input|Toggle|Slider|Selector
      */
     private function getElement(string $id, string $expectedClass): Element {
         $element = $this->elements[$id] ?? null;

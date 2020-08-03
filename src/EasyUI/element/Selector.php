@@ -16,11 +16,18 @@ use InvalidArgumentException;
 
 abstract class Selector extends Element {
 
+    /** @var string|null */
+    private $submittedOptionId = null;
+
     /** @var int */
     private $defaultIndex = 0;
 
     /** @var Option[] */
     private $options = [];
+
+    public function getSubmittedOptionId(): ?string {
+        return $this->submittedOptionId;
+    }
 
     public function getDefaultIndex(): int {
         return $this->defaultIndex;
@@ -35,14 +42,6 @@ abstract class Selector extends Element {
      */
     public function getOptions(): array {
         return $this->options;
-    }
-
-    protected function getSerializedOptions(): array {
-        $options = [];
-        foreach($this->options as $option) {
-            $options[] = $option->getText();
-        }
-        return $options;
     }
 
     public function getOption(string $id): ?Option {
@@ -71,6 +70,22 @@ abstract class Selector extends Element {
                 unset($this->options[$key]);
             }
         }
+    }
+
+    public function assignResult($result): void {
+        $this->submittedOptionId = $this->getOptionByIndex($result)->getId();
+    }
+
+    public function serializeBody(): array {
+        $options = [];
+        foreach($this->options as $option) {
+            $options[] = $option->getText();
+        }
+
+        return [
+            "steps" => $options,
+            "default" => $this->defaultIndex
+        ];
     }
 
 }
