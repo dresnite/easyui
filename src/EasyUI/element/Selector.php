@@ -44,6 +44,14 @@ abstract class Selector extends Element {
         return $this->options;
     }
 
+    protected function getOptionsTexts(): array {
+        $texts = [];
+        foreach($this->options as $option) {
+            $texts[] = $option->getText();
+        }
+        return $texts;
+    }
+
     public function getOption(string $id): ?Option {
         foreach($this->options as $option) {
             if($option->getId() === $id) {
@@ -74,18 +82,6 @@ abstract class Selector extends Element {
 
     public function assignResult($result): void {
         $this->submittedOptionId = $this->getOptionByIndex($result)->getId();
-    }
-
-    public function serializeBody(): array {
-        $options = [];
-        foreach($this->options as $option) {
-            $options[] = $option->getText();
-        }
-
-        return [
-            "steps" => $options,
-            "default" => $this->defaultIndex
-        ];
     }
 
 }

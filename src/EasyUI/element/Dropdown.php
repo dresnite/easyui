@@ -18,4 +18,11 @@ class Dropdown extends Selector {
         return Element::TYPE_DROPDOWN;
     }
 
+    public function serializeBody(): array {
+        return [
+            "options" => $this->getOptionsTexts(),
+            "default" => $this->getDefaultIndex()
+        ];
+    }
+
 }

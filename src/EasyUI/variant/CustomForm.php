@@ -88,7 +88,7 @@ class CustomForm extends Form {
 
     protected function serializeBody(): array {
         return [
-            "contents" => array_values($this->elements)
+            "content" => array_values($this->elements)
         ];
     }
 

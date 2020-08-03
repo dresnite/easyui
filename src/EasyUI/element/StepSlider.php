@@ -18,5 +18,11 @@ class StepSlider extends Selector {
         return Element::TYPE_STEP_SLIDER;
     }
 
+    public function serializeBody(): array {
+        return [
+            "steps" => $this->getOptionsTexts(),
+            "default" => $this->getDefaultIndex()
+        ];
+    }
 
 }
