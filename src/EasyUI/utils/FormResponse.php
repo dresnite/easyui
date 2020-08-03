@@ -15,6 +15,7 @@ namespace EasyUI\utils;
 use EasyUI\element\Element;
 use EasyUI\element\Input;
 use EasyUI\element\Slider;
+use EasyUI\element\StepSlider;
 use EasyUI\element\Toggle;
 use InvalidArgumentException;
 use ReflectionClass;
@@ -45,10 +46,14 @@ class FormResponse {
         return $this->getElement($sliderId, Slider::class)->getSubmittedStep();
     }
 
+    public function getStepSliderSubmittedOptionId(string $sliderId): string {
+        return $this->getElement($sliderId, StepSlider::class)->getSubmittedOptionId();
+    }
+
     /**
      * @param string $id
      * @param string $expectedClass
-     * @return Element|Input|Toggle|Slider
+     * @return Element|Input|Toggle|Slider|StepSlider
      */
     private function getElement(string $id, string $expectedClass): Element {
         $element = $this->elements[$id] ?? null;
