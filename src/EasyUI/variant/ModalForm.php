@@ -29,7 +29,7 @@ class ModalForm extends Form {
     /** @var ModalOption */
     private $denyOption;
 
-    public function __construct(string $title, string $contentText, ?ModalOption $acceptOption = null, ?ModalForm $denyOption = null) {
+    public function __construct(string $title, string $contentText, ?ModalOption $acceptOption = null, ?ModalOption $denyOption = null) {
         $this->contentText = $contentText;
         $this->acceptOption = $acceptOption ?? new ModalOption("Accept");
         $this->denyOption = $denyOption ?? new ModalOption("Deny");
