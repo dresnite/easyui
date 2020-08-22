@@ -26,8 +26,8 @@ trait SubmitListener {
     }
 
     public function setSubmitListener(?Closure $listener): void {
-        if($this->submitListener !== null) {
-            Utils::validateCallableSignature(function(Player $player) {}, $this->submitListener);
+        if($listener !== null) {
+            Utils::validateCallableSignature(function(Player $player) {}, $listener);
         }
         $this->submitListener = $listener;
     }

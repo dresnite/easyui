@@ -26,8 +26,8 @@ trait CloseListener {
     }
 
     public function setCloseListener(?Closure $listener): void {
-        if($this->closeListener !== null) {
-            Utils::validateCallableSignature(function(Player $player) {}, $this->closeListener);
+        if($listener !== null) {
+            Utils::validateCallableSignature(function(Player $player) {}, $listener);
         }
         $this->closeListener = $listener;
     }
