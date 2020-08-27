@@ -33,11 +33,11 @@ abstract class Element implements JsonSerializable {
         $this->headerText = $headerText;
     }
 
-    public function getHeaderText(): string {
+    public function getHeaderText(): ?string {
         return $this->headerText;
     }
 
-    public function setHeaderText(string $headerText): void {
+    public function setHeaderText(?string $headerText): void {
         $this->headerText = $headerText;
     }
 
