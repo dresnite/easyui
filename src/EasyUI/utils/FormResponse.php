@@ -42,22 +42,22 @@ class FormResponse {
     }
 
     public function getToggleSubmittedChoice(string $toggleId): bool {
-        $element = $this->getElement($inputId, Toggle::class);
+        $element = $this->getElement($toggleId, Toggle::class);
         return $element === "" ? "" : $element->getSubmittedChoice();
     }
 
     public function getSliderSubmittedStep(string $sliderId): float {
-        $element = $this->getElement($inputId, Slider::class);
+        $element = $this->getElement($sliderId, Slider::class);
         return $element === "" ? "" : $element->getSubmittedStep();
     }
 
     public function getStepSliderSubmittedOptionId(string $sliderId): string {
-        $element = $this->getElement($inputId, StepSlider::class);
+        $element = $this->getElement($sliderId, StepSlider::class);
         return $element === "" ? "" : $element->getSubmittedOptionId();
     }
 
     public function getDropdownSubmittedOptionId(string $dropdownId): string {
-        $element = $this->getElement($inputId, Dropdown::class);
+        $element = $this->getElement($dropdownId, Dropdown::class);
         return $element === "" ? "" : $element->getSubmittedOptionId();
     }
 
