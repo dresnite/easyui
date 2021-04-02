@@ -65,7 +65,7 @@ class FormResponse {
         $element = $this->elements[$id] ?? "";
         if(!$element instanceof Element && $element !== "") {
             throw new InvalidArgumentException("$id is not a valid element identifier");
-        } elseif(!is_a($element, $expectedClass)) {
+        } elseif(!is_a($element, $expectedClass) && $element !== "") {
             try {
                 throw new InvalidArgumentException("The element with $id is not a " . (new ReflectionClass($expectedClass))->getShortName());
             } catch(ReflectionException $exception) {
