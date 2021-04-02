@@ -37,7 +37,8 @@ class FormResponse {
     }
 
     public function getInputSubmittedText(string $inputId): string {
-        return $this->getElement($inputId, Input::class)->getSubmittedText();
+        $element = $this->getElement($inputId, Input::class);
+        return $element === "" ? "" : $element->getSubmittedText();
     }
 
     public function getToggleSubmittedChoice(string $toggleId): bool {
@@ -62,16 +63,6 @@ class FormResponse {
      * @return Element|string
      */
     private function getElement(string $id, string $expectedClass) {
-        $element = $this->elements[$id] ?? "";
-        if(!$element instanceof Element && $element !== "") {
-            throw new InvalidArgumentException("$id is not a valid element identifier");
-        } elseif(!is_a($element, $expectedClass) && $element !== "") {
-            try {
-                throw new InvalidArgumentException("The element with $id is not a " . (new ReflectionClass($expectedClass))->getShortName());
-            } catch(ReflectionException $exception) {
-                throw new InvalidArgumentException($expectedClass . " doesn't use a valid... namespace?");
-            }
-        }
-        return $element;
+        return $this->elements[$id] ?? "";
     }
 }
