@@ -59,11 +59,11 @@ class FormResponse {
     /**
      * @param string $id
      * @param string $expectedClass
-     * @return Element|Input|Toggle|Slider|Selector
+     * @return Element|string
      */
-    private function getElement(string $id, string $expectedClass): Element {
-        $element = $this->elements[$id] ?? null;
-        if(!$element instanceof Element) {
+    private function getElement(string $id, string $expectedClass) {
+        $element = $this->elements[$id] ?? "";
+        if(!$element instanceof Element && $element !== "") {
             throw new InvalidArgumentException("$id is not a valid element identifier");
         } elseif(!is_a($element, $expectedClass)) {
             try {
@@ -74,5 +74,4 @@ class FormResponse {
         }
         return $element;
     }
-
 }
