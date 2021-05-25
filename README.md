@@ -35,7 +35,7 @@ new SimpleForm("This is the title", "This is the header text");
 
 Controlling what happens when a form closes (optional):
 ```php
-$form->setCloseListener(function(SimpleForm $form) {
+$form->setCloseListener(function(Player $player) {
     echo "The form was closed!";
 })
 ```
