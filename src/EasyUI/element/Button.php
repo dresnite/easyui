@@ -50,7 +50,7 @@ class Button implements JsonSerializable {
         ];
 
         if($this->hasIcon()) {
-            $data["icon"] = $this->icon->jsonSerialize();
+            $data["image"] = $this->icon->jsonSerialize();
         }
 
         return $data;
