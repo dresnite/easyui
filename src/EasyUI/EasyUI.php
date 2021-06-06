@@ -8,9 +8,7 @@
 
 declare(strict_types=1);
 
-
 namespace EasyUI;
-
 
 use pocketmine\plugin\PluginBase;
 

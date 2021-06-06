@@ -8,9 +8,7 @@
 
 declare(strict_types=1);
 
-
 namespace EasyUI\variant;
-
 
 use Closure;
 use EasyUI\element\ModalOption;
@@ -19,15 +17,9 @@ use pocketmine\form\FormValidationException;
 use pocketmine\Player;
 
 class ModalForm extends Form {
-
-    /** @var string */
-    private $contentText;
-
-    /** @var ModalOption */
-    private $acceptOption;
-
-    /** @var ModalOption */
-    private $denyOption;
+    private string $contentText;
+    private ModalOption $acceptOption;
+    private ModalOption $denyOption;
 
     public function __construct(string $title, string $contentText, ?ModalOption $acceptOption = null, ?ModalOption $denyOption = null) {
         $this->contentText = $contentText;

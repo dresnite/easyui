@@ -8,9 +8,7 @@
 
 declare(strict_types=1);
 
-
 namespace EasyUI\utils;
-
 
 use Closure;
 use pocketmine\Player;
@@ -18,8 +16,7 @@ use pocketmine\utils\Utils;
 
 trait CloseListener {
 
-    /** @var Closure|null */
-    private $closeListener = null;
+    private ?Closure $closeListener = null;
 
     public function getCloseListener(): ?Closure {
         return $this->closeListener;

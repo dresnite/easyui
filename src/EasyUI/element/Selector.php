@@ -8,22 +8,14 @@
 
 declare(strict_types=1);
 
-
 namespace EasyUI\element;
-
 
 use InvalidArgumentException;
 
 abstract class Selector extends Element {
-
-    /** @var string|null */
-    private $submittedOptionId = null;
-
-    /** @var int */
-    private $defaultIndex = 0;
-
-    /** @var Option[] */
-    private $options = [];
+    private ?string $submittedOptionId = null;
+    private int $defaultIndex = 0;
+    private array $options = [];
 
     public function getSubmittedOptionId(): ?string {
         return $this->submittedOptionId;

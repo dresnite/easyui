@@ -8,17 +8,14 @@
 
 declare(strict_types=1);
 
-
 namespace EasyUI\element;
-
 
 use EasyUI\utils\Submittable;
 
 class ModalOption {
     use Submittable;
 
-    /** @var string */
-    private $text;
+    private string $text;
 
     public function __construct(string $text) {
         $this->text = $text;

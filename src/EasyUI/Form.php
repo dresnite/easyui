@@ -8,16 +8,12 @@
 
 declare(strict_types=1);
 
-
 namespace EasyUI;
-
 
 use pocketmine\form\Form as PmForm;
 
 abstract class Form implements PmForm {
-
-    /** @var string */
-    private $title;
+    private string $title;
 
     public const TYPE_SIMPLE_FORM = "form";
     public const TYPE_CUSTOM_FORM = "custom_form";
@@ -48,5 +44,4 @@ abstract class Form implements PmForm {
     }
 
     protected function onCreation(): void {}
-
 }

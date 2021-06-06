@@ -8,9 +8,7 @@
 
 declare(strict_types=1);
 
-
 namespace EasyUI\variant;
-
 
 use EasyUI\element\Button;
 use EasyUI\Form;
@@ -21,11 +19,8 @@ use pocketmine\Player;
 class SimpleForm extends Form {
     use Closable;
 
-    /** @var Button[] */
-    private $buttons = [];
-
-    /** @var string|null */
-    private $headerText;
+    private array $buttons = [];
+    private ?string $headerText;
 
     public function __construct(string $title, ?string $headerText = null) {
         $this->headerText = $headerText;

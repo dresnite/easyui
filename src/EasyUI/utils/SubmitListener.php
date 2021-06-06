@@ -8,18 +8,14 @@
 
 declare(strict_types=1);
 
-
 namespace EasyUI\utils;
-
 
 use Closure;
 use pocketmine\Player;
 use pocketmine\utils\Utils;
 
 trait SubmitListener {
-
-    /** @var Closure|null */
-    private $submitListener = null;
+    private ?Closure $submitListener = null;
 
     public function getSubmitListener(): ?Closure {
         return $this->submitListener;

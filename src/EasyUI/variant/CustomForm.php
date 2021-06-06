@@ -8,9 +8,7 @@
 
 declare(strict_types=1);
 
-
 namespace EasyUI\variant;
-
 
 use Closure;
 use EasyUI\element\Element;
@@ -23,11 +21,8 @@ use pocketmine\utils\Utils;
 class CustomForm extends Form {
     use Closable;
 
-    /** @var Element[] */
-    private $elements = [];
-
-    /** @var Closure|null */
-    private $submitListener;
+    private array $elements = [];
+    private ?Closure $submitListener = null;
 
     public function __construct(string $title, ?Closure $submitListener = null) {
         $this->setSubmitListener($submitListener);

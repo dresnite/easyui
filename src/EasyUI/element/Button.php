@@ -8,9 +8,7 @@
 
 declare(strict_types=1);
 
-
 namespace EasyUI\element;
-
 
 use Closure;
 use EasyUI\icon\ButtonIcon;
@@ -20,11 +18,8 @@ use JsonSerializable;
 class Button implements JsonSerializable {
     use Submittable;
 
-    /** @var string */
-    private $text;
-
-    /** @var ButtonIcon|null */
-    private $icon;
+    private string $text;
+    private ?ButtonIcon $icon = null;
 
     public function __construct(string $text, ?ButtonIcon $icon = null, ?Closure $listener = null) {
         $this->text = $text;

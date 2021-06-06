@@ -8,9 +8,7 @@
 
 declare(strict_types=1);
 
-
 namespace EasyUI\utils;
-
 
 use pocketmine\Player;
 

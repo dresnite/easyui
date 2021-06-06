@@ -8,9 +8,7 @@
 
 declare(strict_types=1);
 
-
 namespace EasyUI\element;
-
 
 class Dropdown extends Selector {
 

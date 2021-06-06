@@ -8,25 +8,17 @@
 
 declare(strict_types=1);
 
-
 namespace EasyUI\utils;
-
 
 use EasyUI\element\Dropdown;
 use EasyUI\element\Element;
 use EasyUI\element\Input;
-use EasyUI\element\Selector;
 use EasyUI\element\Slider;
 use EasyUI\element\StepSlider;
 use EasyUI\element\Toggle;
-use InvalidArgumentException;
-use ReflectionClass;
-use ReflectionException;
 
 class FormResponse {
-
-    /** @var Element[] */
-    private $elements;
+    private array $elements = [];
 
     /**
      * FormResponse constructor.
