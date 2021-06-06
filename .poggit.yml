@@ -2,7 +2,7 @@
 build-by-default: true
 branches:
   - master
-- php7.4
+  - php7.4
 projects:
   libEasyUI:
     path: ""
