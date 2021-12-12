@@ -16,7 +16,7 @@ use Closure;
 use EasyUI\element\ModalOption;
 use EasyUI\Form;
 use pocketmine\form\FormValidationException;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class ModalForm extends Form {
 

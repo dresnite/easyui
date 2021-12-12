@@ -13,7 +13,7 @@ namespace EasyUI\utils;
 
 
 use Closure;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\utils\Utils;
 
 trait SubmitListener {
