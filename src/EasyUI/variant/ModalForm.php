@@ -16,18 +16,14 @@ use Closure;
 use EasyUI\element\ModalOption;
 use EasyUI\Form;
 use pocketmine\form\FormValidationException;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class ModalForm extends Form {
 
-    /** @var string */
-    private $contentText;
+    private string $contentText;
 
-    /** @var ModalOption */
-    private $acceptOption;
-
-    /** @var ModalOption */
-    private $denyOption;
+    private ModalOption $acceptOption;
+    private ModalOption $denyOption;
 
     public function __construct(string $title, string $contentText, ?ModalOption $acceptOption = null, ?ModalOption $denyOption = null) {
         $this->contentText = $contentText;

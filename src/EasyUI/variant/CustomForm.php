@@ -17,17 +17,16 @@ use EasyUI\element\Element;
 use EasyUI\Form;
 use EasyUI\utils\Closable;
 use EasyUI\utils\FormResponse;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\utils\Utils;
 
 class CustomForm extends Form {
     use Closable;
 
     /** @var Element[] */
-    private $elements = [];
+    private array $elements = [];
 
-    /** @var Closure|null */
-    private $submitListener;
+    private ?Closure $submitListener;
 
     public function __construct(string $title, ?Closure $submitListener = null) {
         $this->setSubmitListener($submitListener);

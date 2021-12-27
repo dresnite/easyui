@@ -14,11 +14,8 @@ namespace EasyUI\element;
 
 class Option {
 
-    /** @var string */
-    private $id;
-
-    /** @var string */
-    private $text;
+    private string $id;
+    private string $text;
 
     public function __construct(string $id, string $text) {
         $this->id = $id;
