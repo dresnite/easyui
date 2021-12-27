@@ -14,14 +14,9 @@ namespace EasyUI\element;
 
 class Input extends Element {
 
-    /** @var string|null */
-    private $defaultText;
-
-    /** @var string|null */
-    private $placeholder;
-
-    /** @var null|string */
-    private $submittedText = null;
+    private ?string $defaultText;
+    private ?string $placeholder;
+    private ?String $submittedText = null;
 
     public function __construct(?string $headerText, ?string $defaultText = null, ?string $placeholder = null) {
         $this->defaultText = $defaultText;
@@ -29,9 +24,6 @@ class Input extends Element {
         parent::__construct($headerText);
     }
 
-    /**
-     * @return string|null
-     */
     public function getSubmittedText(): ?string {
         return $this->submittedText;
     }

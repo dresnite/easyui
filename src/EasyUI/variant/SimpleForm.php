@@ -16,16 +16,15 @@ use EasyUI\element\Button;
 use EasyUI\Form;
 use EasyUI\utils\Closable;
 use pocketmine\form\FormValidationException;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class SimpleForm extends Form {
     use Closable;
 
     /** @var Button[] */
-    private $buttons = [];
+    private array $buttons = [];
 
-    /** @var string|null */
-    private $headerText;
+    private ?string $headerText;
 
     public function __construct(string $title, ?string $headerText = null) {
         $this->headerText = $headerText;

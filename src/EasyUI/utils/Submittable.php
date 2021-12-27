@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace EasyUI\utils;
 
 
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 trait Submittable {
     use SubmitListener;

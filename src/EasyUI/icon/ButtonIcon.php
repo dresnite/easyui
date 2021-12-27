@@ -16,11 +16,8 @@ use JsonSerializable;
 
 class ButtonIcon implements JsonSerializable {
 
-    /** @var string */
-    private $address;
-
-    /** @var string */
-    private $type;
+    private string $address;
+    private string $type;
 
     public const TYPE_PATH = "path";
     public const TYPE_URL = "url";

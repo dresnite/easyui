@@ -26,7 +26,7 @@ use ReflectionException;
 class FormResponse {
 
     /** @var Element[] */
-    private $elements;
+    private array $elements;
 
     /**
      * FormResponse constructor.
