@@ -23,7 +23,7 @@ class Label extends Element {
     }
 
     public function assignResult($result): void {
-        return;
+        // noop
     }
 
     public function serializeBody(): array {
