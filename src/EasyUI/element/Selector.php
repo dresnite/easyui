@@ -20,7 +20,7 @@ abstract class Selector extends Element {
     private int $defaultIndex = 0;
 
     /** @var Option[] */
-    private $options = [];
+    private array $options = [];
 
     public function getSubmittedOptionId(): ?string {
         return $this->submittedOptionId;
