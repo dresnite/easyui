@@ -9,16 +9,16 @@
 declare(strict_types=1);
 
 
-namespace EasyUI\utils;
+namespace dresnite\EasyUI\utils;
 
 
-use EasyUI\element\Dropdown;
-use EasyUI\element\Element;
-use EasyUI\element\Input;
-use EasyUI\element\Selector;
-use EasyUI\element\Slider;
-use EasyUI\element\StepSlider;
-use EasyUI\element\Toggle;
+use dresnite\EasyUI\element\Dropdown;
+use dresnite\EasyUI\element\Element;
+use dresnite\EasyUI\element\Input;
+use dresnite\EasyUI\element\Selector;
+use dresnite\EasyUI\element\Slider;
+use dresnite\EasyUI\element\StepSlider;
+use dresnite\EasyUI\element\Toggle;
 use InvalidArgumentException;
 use ReflectionClass;
 use ReflectionException;

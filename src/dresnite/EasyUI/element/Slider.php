@@ -9,7 +9,7 @@
 declare(strict_types=1);
 
 
-namespace EasyUI\element;
+namespace dresnite\EasyUI\element;
 
 
 class Slider extends Element {

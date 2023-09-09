@@ -9,7 +9,7 @@
 declare(strict_types=1);
 
 
-namespace EasyUI;
+namespace dresnite\EasyUI;
 
 
 use pocketmine\form\Form as PmForm;
