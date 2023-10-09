@@ -2,6 +2,10 @@
 
 EasyUI is an intuitive and easy-to-use form library for PocketMine-MP. Designed to let you focus on your project and not on how the library works.
 
+## Download
+
+You can download the virion in [Poggit](https://poggit.pmmp.io/ci/dresnite/easyui/libEasyUI).
+
 ## Code examples
 
 ### General rules
