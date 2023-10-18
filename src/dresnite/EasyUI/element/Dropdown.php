@@ -9,18 +9,18 @@
 declare(strict_types=1);
 
 
-namespace EasyUI\element;
+namespace dresnite\EasyUI\element;
 
 
-class StepSlider extends Selector {
+class Dropdown extends Selector {
 
     public function getType(): string {
-        return Element::TYPE_STEP_SLIDER;
+        return Element::TYPE_DROPDOWN;
     }
 
     public function serializeBody(): array {
         return [
-            "steps" => $this->getOptionsTexts(),
+            "options" => $this->getOptionsTexts(),
             "default" => $this->getDefaultIndex()
         ];
     }
