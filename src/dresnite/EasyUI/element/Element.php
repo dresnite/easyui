@@ -27,6 +27,8 @@ abstract class Element implements JsonSerializable {
     public const TYPE_SLIDER = "slider";
     public const TYPE_STEP_SLIDER = "step_slider";
     public const TYPE_TOGGLE = "toggle";
+    public const TYPE_HEADER = "header";
+    public const TYPE_DIVIDER = "divider";
 
     public function __construct(?string $headerText) {
         $this->headerText = $headerText;
@@ -39,6 +41,8 @@ abstract class Element implements JsonSerializable {
     public function setHeaderText(?string $headerText): void {
         $this->headerText = $headerText;
     }
+
+    abstract public function isReadOnly(): bool;
 
     abstract public function getType(): string;
 

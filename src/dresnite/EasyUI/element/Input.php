@@ -28,6 +28,10 @@ class Input extends Element {
         return $this->submittedText;
     }
 
+    public function isReadOnly(): bool {
+        return false;
+    }
+
     public function getType(): string {
         return Element::TYPE_INPUT;
     }

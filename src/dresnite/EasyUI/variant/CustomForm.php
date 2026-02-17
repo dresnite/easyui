@@ -74,11 +74,13 @@ class CustomForm extends Form {
 
             $index = 0;
             foreach($this->elements as $id => $element) {
-                $copy = clone $element;
-                $copy->assignResult($data[$index]);
-                $elementCopies[$id] = $copy;
+                if(!$element->isReadOnly()) {
+                    $copy = clone $element;
+                    $copy->assignResult($data[$index]);
+                    $elementCopies[$id] = $copy;
 
-                $index++;
+                    $index++;
+                }
             }
 
             $this->executeSubmitListener($player, new FormResponse($elementCopies));

@@ -9,10 +9,10 @@
 declare(strict_types=1);
 
 
-namespace dresnite\EasyUI\element;
+namespace EasyUI\element;
 
 
-class Label extends Element {
+class Header extends Element {
 
     public function __construct(string $headerText) {
         parent::__construct($headerText);
@@ -23,7 +23,7 @@ class Label extends Element {
     }
 
     public function getType(): string {
-        return Element::TYPE_LABEL;
+        return Element::TYPE_HEADER;
     }
 
     public function assignResult($result): void {

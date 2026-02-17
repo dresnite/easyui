@@ -26,6 +26,10 @@ class Toggle extends Element {
         return $this->submittedChoice;
     }
 
+    public function isReadOnly(): bool {
+        return false;
+    }
+
     public function getType(): string {
         return Element::TYPE_TOGGLE;
     }

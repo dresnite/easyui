@@ -9,13 +9,13 @@
 declare(strict_types=1);
 
 
-namespace dresnite\EasyUI\element;
+namespace EasyUI\element;
 
 
-class Label extends Element {
+class Divider extends Element {
 
-    public function __construct(string $headerText) {
-        parent::__construct($headerText);
+    public function __construct() {
+        parent::__construct(null);
     }
 
     public function isReadOnly(): bool {
@@ -23,7 +23,7 @@ class Label extends Element {
     }
 
     public function getType(): string {
-        return Element::TYPE_LABEL;
+        return Element::TYPE_DIVIDER;
     }
 
     public function assignResult($result): void {

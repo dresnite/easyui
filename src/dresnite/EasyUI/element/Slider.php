@@ -34,6 +34,10 @@ class Slider extends Element {
         return $this->submittedStep;
     }
 
+    public function isReadOnly(): bool {
+        return false;
+    }
+
     public function getType(): string {
         return Element::TYPE_SLIDER;
     }
