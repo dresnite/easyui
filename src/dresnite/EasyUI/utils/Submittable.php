@@ -9,7 +9,7 @@
 declare(strict_types=1);
 
 
-namespace EasyUI\utils;
+namespace dresnite\EasyUI\utils;
 
 
 use pocketmine\player\Player;

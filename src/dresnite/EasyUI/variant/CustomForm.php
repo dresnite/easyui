@@ -9,14 +9,14 @@
 declare(strict_types=1);
 
 
-namespace EasyUI\variant;
+namespace dresnite\EasyUI\variant;
 
 
 use Closure;
-use EasyUI\element\Element;
-use EasyUI\Form;
-use EasyUI\utils\Closable;
-use EasyUI\utils\FormResponse;
+use dresnite\EasyUI\element\Element;
+use dresnite\EasyUI\Form;
+use dresnite\EasyUI\utils\Closable;
+use dresnite\EasyUI\utils\FormResponse;
 use pocketmine\player\Player;
 use pocketmine\utils\Utils;
 

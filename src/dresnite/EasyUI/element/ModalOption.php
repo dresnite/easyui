@@ -9,10 +9,10 @@
 declare(strict_types=1);
 
 
-namespace EasyUI\element;
+namespace dresnite\EasyUI\element;
 
 
-use EasyUI\utils\Submittable;
+use dresnite\EasyUI\utils\Submittable;
 
 class ModalOption {
     use Submittable;

@@ -9,12 +9,12 @@
 declare(strict_types=1);
 
 
-namespace EasyUI\variant;
+namespace dresnite\EasyUI\variant;
 
 
 use Closure;
-use EasyUI\element\ModalOption;
-use EasyUI\Form;
+use dresnite\EasyUI\element\ModalOption;
+use dresnite\EasyUI\Form;
 use pocketmine\form\FormValidationException;
 use pocketmine\player\Player;
 

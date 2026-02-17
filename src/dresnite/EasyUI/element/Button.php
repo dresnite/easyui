@@ -9,12 +9,12 @@
 declare(strict_types=1);
 
 
-namespace EasyUI\element;
+namespace dresnite\EasyUI\element;
 
 
 use Closure;
-use EasyUI\icon\ButtonIcon;
-use EasyUI\utils\Submittable;
+use dresnite\EasyUI\icon\ButtonIcon;
+use dresnite\EasyUI\utils\Submittable;
 use JsonSerializable;
 
 class Button implements JsonSerializable {
