@@ -2,7 +2,7 @@
   "name": "dresnite/easyui",
   "description": "EasyUI is an intuitive and easy-to-use form library for PocketMine-MP. Designed to let you focus on your project and not on how the library works.",
   "minimum-stability": "stable",
-  "license": "GPL-3.0-or-later",
+  "license": "LGPL-3.0",
   "require": {
     "pocketmine/pocketmine-mp": "^5.0.0",
     "ext-json": "*"
