@@ -15,10 +15,12 @@ namespace dresnite\EasyUI\variant;
 use Closure;
 use dresnite\EasyUI\element\ModalOption;
 use dresnite\EasyUI\Form;
+use dresnite\EasyUI\utils\Closable;
 use pocketmine\form\FormValidationException;
 use pocketmine\player\Player;
 
 class ModalForm extends Form {
+    use Closable;
 
     private string $contentText;
 
@@ -61,7 +63,9 @@ class ModalForm extends Form {
     }
 
     public function handleResponse(Player $player, $data): void {
-        if(!is_bool($data) and $data !== null) {
+        if ($data === null) {
+            $this->notifyClose($player);
+        } elseif(!is_bool($data)) {
             throw new FormValidationException("$data is not a valid response");
         }
 
