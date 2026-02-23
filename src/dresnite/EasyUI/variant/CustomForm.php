@@ -17,6 +17,7 @@ use dresnite\EasyUI\element\Element;
 use dresnite\EasyUI\Form;
 use dresnite\EasyUI\utils\Closable;
 use dresnite\EasyUI\utils\FormResponse;
+use pocketmine\form\FormValidationException;
 use pocketmine\player\Player;
 use pocketmine\utils\Utils;
 
@@ -70,20 +71,58 @@ class CustomForm extends Form {
         if($data === null) {
             $this->notifyClose($player);
         } else {
-            $elementCopies = [];
+            $this->normalizeResponseData($data);
 
+            $elementCopies = [];
             $index = 0;
             foreach($this->elements as $id => $element) {
-                if(!$element->isReadOnly()) {
-                    $copy = clone $element;
-                    $copy->assignResult($data[$index]);
-                    $elementCopies[$id] = $copy;
+                $copy = clone $element;
+                $copy->assignResult($data[$index]);
+                $elementCopies[$id] = $copy;
 
+                $index++;
+            }
+
+            $this->executeSubmitListener($player, new FormResponse($elementCopies));
+        }
+    }
+
+    private function normalizeResponseData(&$data): void {
+        $actual = count($data);
+        $expected = count($this->elements);
+        if($actual > $expected) {
+            throw new FormValidationException("Too many result elements, expected $expected, got $actual");
+        } elseif($actual < $expected) {
+            // In 1.21.70, the client no longer sends nulls for labels
+            $expectedWithoutReadonly = 0;
+            foreach($this->elements as $element) {
+                if(!$element->isReadOnly()) {
+                    $expectedWithoutReadonly++;
+                }
+            }
+
+            if($actual !== $expectedWithoutReadonly) {
+                throw new FormValidationException("Wrong number of result elements, expected either " .
+                    $expected .
+                    " (with readonly values, <1.21.70) or " .
+                    $expectedWithoutReadonly .
+                    " (without readonly values, >=1.21.70), got " .
+                    $actual
+                );
+            }
+
+            $normalized = [];
+            $index = 0;
+            foreach($this->elements as $element) {
+                if($element->isReadOnly()) {
+                    $normalized[] = null;
+                } else {
+                    $normalized[] = $data[$index] ?? null;
                     $index++;
                 }
             }
 
-            $this->executeSubmitListener($player, new FormResponse($elementCopies));
+            $data = $normalized;
         }
     }
 

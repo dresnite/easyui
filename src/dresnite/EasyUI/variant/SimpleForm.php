@@ -58,7 +58,7 @@ class SimpleForm extends Form {
         if($data === null) {
             $this->notifyClose($player);
         } elseif(!is_int($data) or !isset($this->buttons[$data])) {
-            throw new FormValidationException( "Couldn't find the option $data");
+            throw new FormValidationException("Couldn't find the option $data");
         } else {
             $this->buttons[$data]->notifySubmit($player);
         }
